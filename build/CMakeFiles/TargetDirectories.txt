@@ -1,0 +1,3 @@
+/media/ayoub/New Volume/Projects/IoTDashboard/build/CMakeFiles/IoTDashboard.dir
+/media/ayoub/New Volume/Projects/IoTDashboard/build/CMakeFiles/edit_cache.dir
+/media/ayoub/New Volume/Projects/IoTDashboard/build/CMakeFiles/rebuild_cache.dir
