@@ -13,7 +13,7 @@ return std::max(lo, std::min(hi, v));
 
 SensorSimulator::SensorSimulator() 
 { 
-  std::srand(42); // set the seeds 42 so everytime when we run the program it gives us different numbers
+  std::srand(42); // set the seeds 42 so everytime when we run the program it gives us same numbers
 }
 
 
