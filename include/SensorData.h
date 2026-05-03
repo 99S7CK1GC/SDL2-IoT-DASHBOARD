@@ -26,4 +26,4 @@ struct sensordata
 
   static constexpr size_t HISTORY_LEN = 80; //here HISTORY LENGTH means to save the last 80 datas 
 }
-
+// constexpr means that the value is known at the compile time 
