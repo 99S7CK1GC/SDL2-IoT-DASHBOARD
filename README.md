@@ -183,7 +183,3 @@ Serial.printf("TEMP:%.1f;HUM:%.1f;DIST:%.0f;IMU:%.2f,%.2f,%.2f\n",
 - Debug mindset used in real ESP32 projects
 
 ---
-
-## License
-
-MIT
