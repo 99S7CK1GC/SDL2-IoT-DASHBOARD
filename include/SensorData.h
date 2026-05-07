@@ -4,11 +4,11 @@
 #include <deque> //here we use deque to push and pop the front and back of the element
 #include <cstdint>
 
-struct IMUdata { float x, y, z};
+struct IMUdata { float x, y, z; };
 
-enum class status {OK, WARN, CRIT };
+enum class SensorStatus {OK, WARN, CRIT };
 
-struct sensordata
+struct SensorData
 {
   float        temperature; 
   float        humidity;
@@ -16,14 +16,14 @@ struct sensordata
   
   IMUdata      imu;
   
-  status       temp_status;
-  status       hum_status;
-  status       dist_status;
+  SensorStatus  temp_status;
+  SensorStatus   hum_status;
+  SensorStatus  dist_status;
   
   std::deque<float> temp_history;
   std::deque<float> hum_history;
   std::deque<float> dist_history;
 
   static constexpr size_t HISTORY_LEN = 80; //here HISTORY LENGTH means to save the last 80 datas 
-}
+};
 // constexpr means that the value is known at the compile time 

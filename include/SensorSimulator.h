@@ -4,9 +4,9 @@
 
 class SensorSimulator 
 {
-  public 
+  public:
     SensorSimulator();
-    void update(sensordata& data);
+    void update(SensorData& data);
 
   private:
     float drift(float val, float speed, float lo, float hi);

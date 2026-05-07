@@ -12,7 +12,7 @@ std::string Parser::encode(const SensorData& d)
   char buf[128];
   
   // string, size, format
-  std::snprintf(buf, sizeof(buf),"TEMP:%1.f; HUM:%.1f;DIST:%.0f;IMU:%.2f,%.2f,%2.f\n",d.temperature, d.humidity, d.distance, d.imu.x, d.imu.y, d.imu.z);
+  std::snprintf(buf, sizeof(buf),"TEMP:%1.f;HUM:%.1f;DIST:%.0f;IMU:%.2f,%.2f;%2.f\n",d.temperature, d.humidity, d.distance, d.imu.x, d.imu.y, d.imu.z);
   return buf;
 }
 //decode
@@ -26,7 +26,7 @@ bool Parser::decode(const std::string& pkt, SensorData& out)
   bool ok = false;
 
   // we use getline to read a string from an input stream
-  while (std::getline(ss, token, ";"))
+  while (std::getline(ss, token, ';'))
   {
     auto sep = token.find(':');
     if(sep == std::string::npos)
@@ -49,7 +49,7 @@ bool Parser::decode(const std::string& pkt, SensorData& out)
     }
     else if (key == "IMU")
     {
-      std::sscanf(val.c_str(), "%f, %f, %f,",&out.imu.x, &out.imu.y, &out.imu.z);
+      std::sscanf(val.c_str(),"%f,%f,%f,",&out.imu.x, &out.imu.y, &out.imu.z);
     }
   }
   return ok;

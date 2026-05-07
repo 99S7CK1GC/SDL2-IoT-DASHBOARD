@@ -13,8 +13,8 @@ int main()
 
   SensorData         data{};
   SensorSimulator    sim;
-  Parser             Parser;
-  Logger             Logger;
+  Parser             parser;
+  Logger             logger;
   DashboardUI        ui(1280, 720);
 
   data.temperature = 24.0f;
@@ -40,12 +40,12 @@ int main()
       logger.log_packet(pkt);
 
       if(data.temp_status == SensorStatus::WARN)
-        logger.log(LogLevel::WARN, "Temperature out of range")
+        logger.log(LogLevel::WARN, "Temperature out of range");
  
       if(data.dist_status == SensorStatus::WARN)
         logger.log(LogLevel::WARN, "Distance spike detected");
 
-      lost _sensor_time = SDL_GetTicks();
+      last_sensor_time = SDL_GetTicks();
   
     }
     
